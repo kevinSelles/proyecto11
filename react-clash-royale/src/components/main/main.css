@@ -1,0 +1,9 @@
+main {
+  padding: 2rem;
+  text-align: center;
+  background: url(/img/clash-royale.webp);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  height: 75vh;
+}
