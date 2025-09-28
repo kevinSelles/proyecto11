@@ -6,3 +6,9 @@ footer {
   bottom: 0;
   height: 5vh;
 }
+
+@media (max-width: 580px) {
+  footer {
+    height: 8vh;
+  }
+}

@@ -15,5 +15,13 @@
 
 html, body {
   background: url(/img/background-default.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
   font-family: "ClashFont", sans-serif;
+}
+
+@media (max-width: 375px) and (max-height: 667px){
+  html, body {
+    height: 105%
+  }
 }

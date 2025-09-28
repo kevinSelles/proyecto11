@@ -45,3 +45,9 @@
     -2px  2px 0 black,
      2px  2px 0 black;
 }
+
+@media (max-width: 400px) {
+  .characters-section h2 {
+    font-size: 1.7rem;
+  }
+}

@@ -1,5 +1,5 @@
 import "./header.css";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function Header() {
   return (
@@ -7,9 +7,27 @@ function Header() {
       <h1>Clash Royale</h1>
       <nav>
         <ul>
-          <li><Link to="/">Inicio</Link></li>
-          <li><Link to="/personajes">Personajes</Link></li>
-          <li><Link to="/about">About</Link></li>
+          <li>
+            <NavLink to="/" 
+              className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}
+            >
+              Inicio
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/personajes" 
+              className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}
+            >
+              Personajes
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/informacion" 
+              className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}
+            >
+              Información
+            </NavLink>
+          </li>
         </ul>
       </nav>
     </header>
