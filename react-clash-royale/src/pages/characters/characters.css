@@ -1,0 +1,47 @@
+.characters-section {
+  padding: 2rem;
+  text-align: center;
+}
+
+.characters-section h2 {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: whitesmoke;
+  text-shadow: 
+    -3px -3px 0 black,
+     3px -3px 0 black,
+    -3px  3px 0 black,
+     3px  3px 0 black;
+}
+
+.characters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.character-card {
+  padding: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.character-card:hover {
+  transform: scale(1.2);
+}
+
+.character-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.character-card p {
+  margin-top: 0.5rem;
+  font-weight: bold;
+  color: whitesmoke;
+  text-shadow: 
+    -2px -2px 0 black,
+     2px -2px 0 black,
+    -2px  2px 0 black,
+     2px  2px 0 black;
+}

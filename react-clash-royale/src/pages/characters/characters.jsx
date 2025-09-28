@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import ShowCharacters from "./showCharacters";
 import Loading from "../../components/loading/loading";
 import Pagination from "../../components/pagination/pagination";
+import CharacterModal from "../../components/modal/characterModal";
 
 function Characters() {
   const [characters, setCharacters] = useState([]);
@@ -11,6 +12,8 @@ function Characters() {
 
   const [currentPage, setCurrentPage] = useState(1);
   const charactersPerPage = 10;
+
+  const [selectedCharacter, setSelectedCharacter] = useState(null);
 
   const JSONBIN_URL = import.meta.env.VITE_JSONBIN_URL;
 
@@ -39,16 +42,28 @@ function Characters() {
   const currentCharacters = characters.slice(indexOfFirstChar, indexOfLastChar);
   const totalPages = Math.ceil(characters.length / charactersPerPage);
 
+  const handleOpenModal = (char) => setSelectedCharacter(char);
+  const handleCloseModal = () => setSelectedCharacter(null);
+
   return (
-    <main className="characters-main">
+    <section className="characters-section">
       <h2>Personajes del juego</h2>
-      <ShowCharacters characters={currentCharacters} />
+      <ShowCharacters
+        characters={currentCharacters}
+        onCharacterClick={handleOpenModal}
+      />
       <Pagination
         currentPage={currentPage}
         totalPages={totalPages}
         onPageChange={(page) => setCurrentPage(page)}
       />
-    </main>
+      {selectedCharacter && (
+        <CharacterModal
+          character={selectedCharacter}
+          onClose={handleCloseModal}
+        />
+      )}
+    </section>
   );
 }
 
